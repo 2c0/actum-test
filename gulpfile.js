@@ -22,21 +22,21 @@ var browserSync = require('browser-sync');
 
 // Sources + Destination variables
 var srcRoot = 'source/**/*.*';
-//var fontsSrc = "source/fonts/**/*.*";
-//var fontsDest = "www/wp-content/themes/phodat/build/fonts";
+var fontsSrc = "source/fonts/**/*.*";
+var fontsDest = "www/build/fonts";
 
 var sassSrc = "source/sass/**/*.scss";
-var sassDest = ""; //example www/wp-content/themes/phodat/build/css
+var sassDest = "www/build/css"; //example www/wp-content/themes/phodat/build/css
 
 var jsSrc = ["source/js/**/*.js", "!source/js/test/**/*.*"];
-var jsDest = ""; //example www/wp-content/themes/phodat/build/js
+var jsDest = "www/build/js"; //example www/wp-content/themes/phodat/build/js
 
 var scriptsName = 'scripts.js';
 
 var jQuerySrc = 'node_modules/jquery/dist/*.*';
 var bootstrapSrc = 'node_modules/bootstrap-sass/assets/**/*.*';
 
-//var vendorDest = 'www/wp-content/themes/phodat/build/vendor';
+var vendorDest = 'www/build/vendor';
 //var imagesDest = 'www/wp-content/themes/phodat/assets/images';
 
 /* autoprefixer options */
@@ -54,11 +54,11 @@ gulp.task('default', ['copy-vendor-assets', 'sass-dev', 'scripts-dev', 'watch'])
 // main watch task
 gulp.task('watch', function () {
 
-    browserSync.init({
+    /*browserSync.init({
         open: "external",
         proxy: "phodat.dev/"
         //port: 80
-    });
+    });*/
 
     gulp.watch(sassSrc, ['sass-dev']);
     gulp.watch(jsSrc, ['scripts-dev']);
