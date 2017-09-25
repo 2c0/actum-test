@@ -3,5 +3,9 @@
 @import "variables";
 
 .navbar-nav {
-    float: right;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        float: right;
+    }
+    
 }
